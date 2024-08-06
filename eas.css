@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sketch-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.squares{
+    background-color: white;
+    border: 0.5px solid black;
+}
