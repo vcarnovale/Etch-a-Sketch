@@ -11,6 +11,10 @@ sketchPad.style.height = gridHeight+"px";
 sketchPad.style.width = gridWidth+"px";
 
 
+function getRandomNumUpTo(num) {
+    return Math.floor(Math.random() * num);
+}
+
 // makeSquares (Int squareAmt) --> Makes the squares for the etch-a-sketch grid
 function makeSquares (size){
     // Sets the amount of pixels dedicated to each square to grow depending on the size of the grid nxn
@@ -30,10 +34,16 @@ function makeSquares (size){
     }
 
     // Functionality for button hovering
-    const squares = document.querySelectorAll("div");
+    const squares = document.querySelectorAll(".squares");
     squares.forEach(square => {
     square.addEventListener("mouseenter", () => {
-        square.style.backgroundColor = "#FF7F0D";
+        if (square.style.backgroundColor == ""){
+            square.style.opacity = "0.10";
+            square.style.backgroundColor = "rgb(" + (getRandomNumUpTo(255)) + "," + (getRandomNumUpTo(255)) + "," + (getRandomNumUpTo(255)) + ")";
+        } else if (square.style.opacity < 1){
+            square.style.opacity = "" + (Number(square.style.opacity) + 0.10);
+        }
+        //square.style.backgroundColor = "#FF7F0D";
     })
     
 });

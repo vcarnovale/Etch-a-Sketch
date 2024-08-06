@@ -12,6 +12,6 @@ body{
 }
 
 .squares{
-    background-color: white;
+    background-color: none;
     border: 0.5px solid black;
 }
